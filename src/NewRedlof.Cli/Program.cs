@@ -38,7 +38,7 @@ namespace NewRedlof.Cli
                         var lastWriteTime = file.LastWriteTime;
                         var year = lastWriteTime.Year;
 
-                        var path = Path.Combine(dest, year.ToString(), $"{year}-{lastWriteTime.Month}");
+                        var path = Path.Combine(dest, year.ToString(), lastWriteTime.ToString("yyyy-MM"));
                         Filerectory.CreateDirectory(path);
                         File.Move(x, Path.Combine(path, file.Name));
 
